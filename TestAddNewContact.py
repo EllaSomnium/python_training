@@ -72,11 +72,9 @@ class TestAddNewContact(unittest.TestCase):
         wd.find_element_by_name("bday").click()
         # Add birthday date day
         Select(wd.find_element_by_name("bday")).select_by_visible_text(contact_info.bday)
-        wd.find_element_by_xpath("//option[@value='19']").click()
         # Add birthday date month
         wd.find_element_by_name("bmonth").click()
         Select(wd.find_element_by_name("bmonth")).select_by_visible_text(contact_info.bmonth)
-        wd.find_element_by_xpath("//option[@value='May']").click()
         # Add birthday date year
         wd.find_element_by_name("byear").click()
         wd.find_element_by_name("byear").clear()
