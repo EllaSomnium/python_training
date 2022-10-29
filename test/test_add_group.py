@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
-from group import Group
-from application import Application
+from model.group import Group
+from fixture.application import Application
 
 
 @pytest.fixture
@@ -13,7 +13,7 @@ def app(request):
 
 def test_add_group(app):
     app.login(username="admin", password="secret")
-    app.create_group(Group(name="group1", header="group1_header", footer="group1_footer"))
+    app.create_group(Group(name="group234", header="group1_header", footer="group1_footer"))
     app.logout()
 
 
