@@ -70,25 +70,27 @@ class ContactHelper:
         self.insert_data(contact_info)
         # input
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-        self.app.return_to_homepage()
+        self.app.go_to_homepage()
 
 
     def delete_first(self):
         wd = self.app.wd
+        self.app.go_to_homepage()
         # select first contact
         wd.find_element_by_name("selected[]").click()
         # submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to.alert.accept()
-        self.app.return_to_homepage()
+        self.app.go_to_homepage()
 
     def modify_first_contact(self, contact_info):
         wd = self.app.wd
+        self.app.go_to_homepage()
         # open edit page
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
         self.insert_data(contact_info)
         # Submit edition
         wd.find_element_by_name("update").click()
-        self.app.return_to_homepage()
+        self.app.go_to_homepage()
 
 
